@@ -1,0 +1,14 @@
+Grace Online Shopping----------
+
+Github
+
+UserName - Navjot-Singh2608
+password - Navjot2608@
+
+H2DataBase---------------------
+
+Driver Class - org.h2.Driver
+DATABASE_DIALECT - org.hibernate.dialect.H2Dialect
+JDBC URL - jdbc:h2:tcp://localhost/~/onlineshopping
+User Name - sa
+password - 

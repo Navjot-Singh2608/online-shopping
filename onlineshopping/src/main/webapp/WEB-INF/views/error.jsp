@@ -4,8 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
@@ -60,61 +58,44 @@
 
 	<div class="wrapper">
 
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="${contextRoot}/home">Home</a>
+				</div>
+			</div>
+		</nav>
 
 		<!-- Page Content -->
 
 		<div class="content">
 
+			<div class="container">
+				<div class="row">
 
-			<!-- Loading the home content -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
+					<div class="col-xs-12">
 
-			<!-- Load only when user clicks about -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp"%>
-			</c:if>
+						<div class="jumbotron">
 
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp"%>
-			</c:if>
+							<h1>${errorTitle}</h1>
+							<hr />
 
-			<!-- Load only when user clicks View Product its Category Product -->
-			<c:if
-				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-
-			<!-- Load only when user click show product -->
-			<c:if test="${userClickShowProduct == true }">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
-
-
-
+							<blockquote style="word-wrap:break-word">
+							
+							${errorDescription}
+							
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Footer comes here -->
 
 		<%@include file="./shared/footer.jsp"%>
 
-		<script src="${js}/jquery.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-
-		<!-- DataTable Plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-
-		<!-- DataTable BootStrap Script -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-
-		<!-- Self Coded javascript -->
-		<script src="${js}/myapp.js"></script>
 	</div>
 </body>
 
