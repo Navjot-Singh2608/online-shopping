@@ -94,6 +94,10 @@
 				<%@include file="singleProduct.jsp"%>
 			</c:if>
 
+			<!-- Load only when user click manage product -->
+			<c:if test="${userClickManageProducts == true }">
+				<%@include file="manageProducts.jsp"%>
+			</c:if>
 
 
 		</div>
@@ -112,6 +116,9 @@
 
 		<!-- DataTable BootStrap Script -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+		<!-- Bootbox -->
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- Self Coded javascript -->
 		<script src="${js}/myapp.js"></script>
